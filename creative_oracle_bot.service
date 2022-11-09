@@ -1,0 +1,16 @@
+[Unit]
+Description=creative_oracle_bot
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=yoshiro
+WorkingDirectory=/home/workingdirectory
+ExecStart=/usr/bin/python3 /home/workingdirectory/main.py
+StartLimitBurst=0
+RestarSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
